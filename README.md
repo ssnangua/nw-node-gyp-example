@@ -32,7 +32,7 @@ For NW.js `v0.99.0` the Node version is `23.10.0`\
 
 ```
 addon
-├── binding.gyp                  (target_name: "hello")
+├── binding.gyp                  (target_name: "hello", libraries: ["../node/Release/nw.lib"])
 ├── hello.cc
 ├── nw-headers-v0.99.0.tar.gz    (1.1 downloaded from https://dl.nwjs.io)
 ├── node                         (1.2 extracted from `nw-headers-v0.99.0.tar.gz`)
