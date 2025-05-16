@@ -13,21 +13,21 @@ Build NW.js Node Addons using `node-gyp`.
 
 If the NW.js's version is 0.99.0:
 
-1. Download NW.js Node headers tarball:
-https://dl.nwjs.io/v0.99.0/nw-headers-v0.99.0.tar.gz
+1. Download NW.js Node headers tarball:\
+https://dl.nwjs.io/v0.99.0/nw-headers-v0.99.0.tar.gz\
 Extract `nw-headers-v0.99.0.tar.gz` to `./node/`.
-2. Download `node.lib` and `nw.lib`:
-http://node-webkit.s3.amazonaws.com/v0.99.0/x64/node.lib
-http://node-webkit.s3.amazonaws.com/v0.99.0/x64/nw.lib
+2. Download `node.lib` and `nw.lib`:\
+http://node-webkit.s3.amazonaws.com/v0.99.0/x64/node.lib\
+http://node-webkit.s3.amazonaws.com/v0.99.0/x64/nw.lib\
 Copy `node.lib` and `nw.lib` to `./node/Release/`.
-3. Get the Node version used by the NW.js release version:
-https://nwjs.io/versions.json
-For `v0.99.0` the Node version is `23.10.0`
-(Re)build Node addons for NW.js:
+3. Get the Node version used by the NW.js release version:\
+https://nwjs.io/versions.json\
+For NW.js `v0.99.0` the Node version is `23.10.0`\
+(Re)build Node addons for NW.js:\
 `node-gyp rebuild --target=23.10.0 --arch=x64 --nodedir=/path/to/node/headers/directory`
-4. If the `target_name` value in your `binding.gyp` file is `hello`, the compiled addon will be at:
+4. If the `target_name` value in your `binding.gyp` file is `"hello"`, the compiled addon will be at:\
 `./build/Release/hello.node`.
-5. Import the module inside your application:
+5. Import the module inside your application:\
 `const hello = require('./build/Release/hello.node');`
 
 ```
