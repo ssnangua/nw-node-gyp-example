@@ -27,7 +27,7 @@ https://nwjs.io/versions.json (For NW.js `v0.99.0` the Node version is `23.10.0`
 4. If the `target_name` value in your `binding.gyp` file is `"hello"`, the compiled addon will be at:\
 `./build/Release/hello.node`.
 5. Import the module inside your application:\
-`const hello = require('./build/Release/hello.node');`
+`const { hello } = require('./build/Release/hello.node');`
 
 ```
 addon
