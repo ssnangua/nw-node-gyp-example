@@ -2,7 +2,7 @@
 
 Build NW.js Node Addons using `node-gyp`.
 
-## Getting Started with demo application
+## Getting Started
 
 1. Clone repo
 2. `npm i` to install dependencies
@@ -43,3 +43,7 @@ addon
     └── Release
         └── hello.node           (4   compiled addon √)
 ```
+
+## See Also
+
+- [nw-node-addon-gyp-napi-example](https://github.com/nwutils/nw-node-addon-gyp-napi-example)
