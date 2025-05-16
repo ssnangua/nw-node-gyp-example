@@ -34,6 +34,13 @@ async function downloadLib(nwVersion, arch, name) {
   await downloadFile(libUrl, libPath);
 }
 
+function addNwLibToAdditionalDependencies() {
+  console.log("Adding nw.lib to common.gypi...");
+  let commonGypi = fs.readFileSync("./node/common.gypi", "utf8");
+  commonGypi = commonGypi.replace(/'winmm.lib',.*/, "'winmm.lib', '../node/Release/nw.lib',");
+  fs.writeFileSync("./node/common.gypi", commonGypi);
+}
+
 async function rebuild(nwVersion, arch) {
   console.log("Getting node version...");
   console.log("  https://nwjs.io/versions.json");
@@ -52,7 +59,10 @@ async function rebuild(nwVersion, arch) {
 async function run(nwVersion, arch) {
   await downloadHeaders(nwVersion);
   await downloadLib(nwVersion, arch, "node");
-  if (arch !== "ia32") await downloadLib(nwVersion, arch, "nw");
+  if (arch !== "ia32") {
+    await downloadLib(nwVersion, arch, "nw");
+    addNwLibToAdditionalDependencies();
+  }
   rebuild(nwVersion, arch);
 }
 
