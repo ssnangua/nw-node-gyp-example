@@ -21,8 +21,7 @@ http://node-webkit.s3.amazonaws.com/v0.99.0/x64/node.lib \
 http://node-webkit.s3.amazonaws.com/v0.99.0/x64/nw.lib \
 Copy `node.lib` and `nw.lib` to `./node/Release/`.
 3. Get the Node version used by the NW.js release version:\
-https://nwjs.io/versions.json \
-For NW.js `v0.99.0` the Node version is `23.10.0`\
+https://nwjs.io/versions.json (For NW.js `v0.99.0` the Node version is `23.10.0`)\
 (Re)build Node addons for NW.js:\
 `node-gyp rebuild --target=23.10.0 --arch=x64 --nodedir=/path/to/node/headers/directory`
 4. If the `target_name` value in your `binding.gyp` file is `"hello"`, the compiled addon will be at:\
