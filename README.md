@@ -11,7 +11,7 @@ Build NW.js Node Addons using `node-gyp`.
 
 ## Approach
 
-If the NW.js's version is 0.99.0:
+For example, for NW.js `v0.99.0`:
 
 1. Download NW.js Node headers tarball:\
 https://dl.nwjs.io/v0.99.0/nw-headers-v0.99.0.tar.gz \
