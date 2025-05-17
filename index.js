@@ -59,7 +59,7 @@ async function rebuild(nwVersion, arch) {
 async function run(nwVersion, arch) {
   await downloadHeaders(nwVersion);
   await downloadLib(nwVersion, arch, "node");
-  if (arch !== "ia32") {
+  if (process.platform === "win32") {
     await downloadLib(nwVersion, arch, "nw");
     addNwLibToAdditionalDependencies();
   }
